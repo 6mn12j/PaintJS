@@ -15,3 +15,4 @@ https://6mn12j.github.io/paintJS/
 지우개 기능 </br>
 저장시 이름 설정 </br>
 react로 만들어보기 </br>
+각 기능마다 cusor 변경

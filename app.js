@@ -6,6 +6,8 @@ const mode = document.getElementById("jsMode");
 const saveBtn = document.getElementById("jsSave");
 const clearBtn = document.getElementById("jsClear");
 
+let mouseCursor = document.querySelector(".cursor");
+
 const DEFAULT_COLOR = "#2c2c2c";
 let CANVAS_HEIGHT = canvas.offsetHeight;
 let CANVAS_WIDTH = canvas.offsetWidth;
@@ -61,12 +63,25 @@ const handleRangeChange = (event) => {
     ctx.lineWidth = size;
 }
 
+const cursor = (event) => {
+    mouseCursor.style.left = event.clientX+10 + "px";
+    mouseCursor.style.top = event.clientY + "px";
+    if(filling === true) mouseCursor.classList.add("paint");
+    else {
+        mouseCursor.classList.remove("paint");
+        mouseCursor.classList.add("brush")
+    }
+    
+}
+
 const handleModeClick = (evnet) =>{
-    //console.log("click");
+    window.addEventListener("mousemove",cursor);
     if(filling === true ){
         filling = false;
         mode.innerText = "FILL";
+
     } else {
+
         filling = true;
         mode.innerText = "Paint";
       
