@@ -134,35 +134,31 @@ const handleWindowResize = (event) => {
 
 
 if(canvas){
-    canvas.addEventListener("mousemove", onMouseMove);
-    canvas.addEventListener("mousedown",startPainting); 
-    canvas.addEventListener("mouseup", stopPainting);
-    canvas.addEventListener("mouseleave",stopPainting);
-    canvas.addEventListener("click",handleCanvasClick);
-    canvas.addEventListener("contextmenu",handleCM); 
+   
+
 }
+
+canvas && ( 
+    canvas.addEventListener("mousemove", onMouseMove),
+    canvas.addEventListener("mousedown",startPainting),
+    canvas.addEventListener("mouseup", stopPainting),
+    canvas.addEventListener("mouseleave",stopPainting),
+    canvas.addEventListener("click",handleCanvasClick),
+    canvas.addEventListener("contextmenu",handleCM) 
+);
 
 Array.from(colors).forEach(color => color.addEventListener("click",handleColorClick));
 
-if(range){
-    range.addEventListener("input", handleRangeChange);
-}
+range &&  range.addEventListener("input", handleRangeChange);
 
-if(mode){
-    mode.addEventListener("click",handleModeClick);
-}
+mode &&  mode.addEventListener("click",handleModeClick);
 
-if(saveBtn){
-    saveBtn.addEventListener("click",handleSaveClick);
-}
+saveBtn && saveBtn.addEventListener("click",handleSaveClick);
 
-if(clearBtn){
-    clearBtn.addEventListener("click",handleClearClick);
-}
+clearBtn && clearBtn.addEventListener("click",handleClearClick);
 
-if(mouseCursor){
-    window.addEventListener("mousemove",cursor);
-}
+mouseCursor &&  window.addEventListener("mousemove",cursor);
 
 
+//모바일 반응형 대응
 window.addEventListener("resize", handleWindowResize, onMouseMove);
