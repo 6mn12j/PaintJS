@@ -20,7 +20,7 @@ canvas.height = CANVAS_HEIGHT;
 
 ctx.fillStyle = "white";
 ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-ctx.strokeStyle = DEFAULT_COLOR;//context default,그릴 선들의 default 색상
+ctx.strokeStyle = DEFAULT_COLOR;//그릴 선들의 default 색상
 ctx.fillStyle = DEFAULT_COLOR;
 ctx.lineWidth = 2.5 ;// line range,선의 너비
 
@@ -64,6 +64,7 @@ const handleRangeChange = (event) => {
 }
 
 const cursor = (event) => {
+
     mouseCursor.style.left = event.clientX + 10 + "px";
     mouseCursor.style.top = event.clientY + 25 +"px";
 }
@@ -120,8 +121,7 @@ const handleClearClick = (event) => {
 
 
 const handleWindowResize = (event) => {
-    console.log("resize");
-    console.log(canvas.offsetHeight,canvas.offsetWidth);
+   
     try{
         CANVAS_HEIGHT = canvas.offsetHeight;
         CANVAS_WIDTH = canvas.offsetWidth;
@@ -130,12 +130,6 @@ const handleWindowResize = (event) => {
     } catch(error){
         console.log(error);
     }
-}
-
-
-if(canvas){
-   
-
 }
 
 canvas && ( 
