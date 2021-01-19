@@ -61,23 +61,26 @@ body{
 }
 
 /* Cursor */
+.cursor {
+    pointer-events: none;
+}
 .paint{
-    width:3rem;
-    height: 3rem;
+    width:1.5rem;
+    height: 1.5rem;
     background-image: url(./assets/paint.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 2rem 2rem;
+    background-size: 1.5rem 1.5rem;
     position: absolute;
 }
 
 .brush{
-    width:3rem;
-    height: 3rem;
+    width:1.5rem;
+    height: 1.5rem;
     background-image: url(./assets/brush.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 2rem 2rem;
+    background-size: 1.5rem 1.5rem;
     position: absolute;
 }
 

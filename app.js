@@ -64,18 +64,24 @@ const handleRangeChange = (event) => {
 }
 
 const cursor = (event) => {
-    mouseCursor.style.left = event.clientX+10 + "px";
-    mouseCursor.style.top = event.clientY + "px";
-    if(filling === true) mouseCursor.classList.add("paint");
-    else {
+    mouseCursor.style.left = event.clientX + 10 + "px";
+    mouseCursor.style.top = event.clientY + 30 +"px";
+}
+
+const cursorChange = (event) => {
+    if(filling === true){
         mouseCursor.classList.remove("paint");
         mouseCursor.classList.add("brush")
+    } 
+    else {
+        mouseCursor.classList.remove("brush");
+        mouseCursor.classList.add("paint");
+        
     }
-    
 }
 
 const handleModeClick = (evnet) =>{
-    window.addEventListener("mousemove",cursor);
+    cursorChange();
     if(filling === true ){
         filling = false;
         mode.innerText = "FILL";
@@ -83,7 +89,7 @@ const handleModeClick = (evnet) =>{
     } else {
 
         filling = true;
-        mode.innerText = "Paint";
+        mode.innerText = "PAINT";
       
     }
 }
@@ -154,5 +160,9 @@ if(clearBtn){
     clearBtn.addEventListener("click",handleClearClick);
 }
 
+if(mouseCursor){
+    window.addEventListener("mousemove",cursor);
+}
 
-window.addEventListener("resize", handleWindowResize,onMouseMove);
+
+window.addEventListener("resize", handleWindowResize, onMouseMove);
