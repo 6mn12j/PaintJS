@@ -65,7 +65,7 @@ const handleRangeChange = (event) => {
 
 const cursor = (event) => {
     mouseCursor.style.left = event.clientX + 10 + "px";
-    mouseCursor.style.top = event.clientY + 30 +"px";
+    mouseCursor.style.top = event.clientY + 25 +"px";
 }
 
 const cursorChange = (event) => {
