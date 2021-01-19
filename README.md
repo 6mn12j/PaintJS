@@ -10,9 +10,9 @@ https://6mn12j.github.io/paintJS/
 페인트 기능 ✔ </br>
 이미지 저장 기능 ✔ </br>
 지우기 기능 ✔ </br>
+각 기능마다 cusor 변경 ✔ </br>
 
 ## 🤔 구현할 항목 </br>
 지우개 기능 </br>
 저장시 이름 설정 </br>
 react로 만들어보기 </br>
-각 기능마다 cusor 변경
